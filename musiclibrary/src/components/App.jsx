@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import './App.css';
 //import Music from './Music/Music';
-import MusicTable from './Music/MusicTable';
-import SongCreator from './SongCreator/SongCreator';
+import musicTable from './musicTable/Musictable';
 import SearchBar from './SearchBar/SearchBar';
 
 class App extends Component {
@@ -74,7 +73,7 @@ this.setState({
     return(
     <div>
         <SearchBar handleInput= {this.handleInput} />
-        <MusicTable mapMusic= {() => this.mapMusic()}/>
+        <musicTable mapMusic= {() => this.mapMusic()}/>
         <SongCreator addNewSong= {this.addNewSong.bind(this)}/>
     </div>
     );
