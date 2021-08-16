@@ -36,7 +36,7 @@ class Songform extends Component{
             release_date: ''
         });
     }
-    redner() {
+    render() {
         return (
         <Segment inverted>
             <Form inverted onSubmit={this.Submit}>
