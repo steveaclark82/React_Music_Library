@@ -1,6 +1,7 @@
 import React from 'react';
 import './Musictable.css';
-
+import { Table } from 'react';
+import { Button } from 'react';
 
 
 const Musictable = (props) => {
@@ -37,4 +38,4 @@ const Musictable = (props) => {
     )
 }
 
-export default MusicTable;
+export default Musictable;
