@@ -1,16 +1,12 @@
 import React from 'react';
+import './searchBar.css';
 
-const SearchBar = (props) => {
-    return(
-        <div>
-            <hr />
-            <h2>Search</h2>
-                <div className='col-md-4'>
-                    <label>Search:</label>
-                    <input onChange={props.handleInput} type ="text"/>
-                </div>
+function SearchBar(props) { 
+    return (
+        <div className='titlebar-nav'>
+            <h1>Search</h1>
         </div>
-    )
+    );
 }
 
-export default SearchBar
+export default SearchBar;
