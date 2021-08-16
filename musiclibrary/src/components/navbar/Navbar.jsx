@@ -1,6 +1,6 @@
 import React from 'react';
-import './navBar.css';
-import { Button, Menu } from 'semantic-ui-react'
+import './Navbar.css';
+
 
 function NavBar(props) { 
     return (

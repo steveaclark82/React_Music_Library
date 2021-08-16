@@ -1,7 +1,6 @@
 import React from 'react';
 import './Musictable.css';
-import { Table } from 'semantic-ui-react';
-import { Button } from 'semantic-ui-react'
+
 
 
 const Musictable = (props) => {
