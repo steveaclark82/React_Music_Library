@@ -1,25 +1,23 @@
 import React from 'react';
 import './Musictable.css';
-import { Table } from 'react';
 import { Button } from 'react';
 
 
 const Musictable = (props) => {
     return (
-        <Table inverted>
+        <table className="table table-dark table-hover" cellSpacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Song Title</th>
-                    <th>Artist</th>
-                    <th>Album</th>
-                    <th>Genre</th>
-                    <th>Release Date</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Song Title</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Release Date</th>
                 </tr>
             </thead>
             <tbody>
-        {props.songs.map((song, info) => { 
-        return (
+            {props.songs.map(song =>  
             <tr key={song.id}>
                 <td>{song.id}</td>
                 <td>{song.title}</td>
@@ -30,11 +28,9 @@ const Musictable = (props) => {
                 <td><Button color='yellow' onClick={() => {props.update(song.id)}}>Update</Button>
                 <Button negative onClick={() => {props.delete(song.id)}}>Delete</Button></td>
             </tr>
-        )}
-    )}
+            )}
             </tbody>
-        </Table>
-        
+        </table>        
     )
 }
 
