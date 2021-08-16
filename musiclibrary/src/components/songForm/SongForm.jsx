@@ -73,6 +73,7 @@ class Songform extends Component{
                 <Button positive type='submit'>Add Song</Button>
             </Form>
         </Segment>
-        )
+        );
     }
 }
+export default Songform;
