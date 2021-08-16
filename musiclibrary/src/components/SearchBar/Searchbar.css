@@ -1,0 +1,10 @@
+.titlebar-nav { 
+    color: rgb(255, 247, 132);
+    text-shadow: rgb(0, 0, 0) 2px 2px;
+    width: 100%;
+}
+
+h1 {
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+  }

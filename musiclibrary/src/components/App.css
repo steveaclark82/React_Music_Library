@@ -1,9 +1,5 @@
 body {
-    background-color: powderblue;
-  }
-  h1 {
-    color: blue;
-  }
-  p {
-    color: red;
-  }
+  background: rgb(96, 93, 255);
+  color: #000;
+  font-family: Fira Sans, sans-serif;
+}
