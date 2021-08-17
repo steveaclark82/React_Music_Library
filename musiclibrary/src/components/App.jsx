@@ -83,7 +83,7 @@ class App extends Component {
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>
                     
-                    <CreateSong addSong={this.addSong.bind(this)}/>
+                    <CreateSong addNewSong={this.addNewSong.bind(this)}/>
                     <br/>
                     </center>
                 </div>
