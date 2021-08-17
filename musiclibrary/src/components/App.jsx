@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import MusicTable from './musicTable/Musictable.css';
+import MusicTable from './musicTable/musicTable.css';
 import axios from 'axios';
-import SearchBar from './SearchBar/Searchbar.css';
+import SearchBar from './SearchBar/SearchBar.css';
 import CreateSong from './CreateSong/createSong.css';
 import './App.css';
 
