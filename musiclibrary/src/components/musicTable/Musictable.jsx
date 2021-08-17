@@ -1,5 +1,5 @@
 import React from 'react';
-import './Musictable.css';
+import './musicTable.css';
 import Delete from '../DeleteSong/deleteSong';
 import Like from '../LikeButton/likeButton';
 
@@ -12,7 +12,19 @@ function MusicTable(props){
         );
     }
     else{
-        return(
+        let musicList = props.songs.map(function(song){
+            return <tr>
+                <td>{song.title}</td>
+                <td>{song.album}</td>
+                <td>{song.artist}</td>
+                <td>{song.genre}</td>
+                <td>{song.release_date}</td>
+                <td>{song.likes}</td>
+                <td><Like songId={song.id} songTitle={song.title} likeSong={props.likeSong}/></td>
+                <td><Delete songId={song.id} deleteSongs={props.deleteSongs} /></td>
+            </tr>
+        })
+        return (
             <div className='table'>
                 <h1>Music Library</h1>
                 <table>
@@ -27,27 +39,12 @@ function MusicTable(props){
                         <th></th>
                     </tr>
                     <tbody>
-                    {props.songs.map(function(song){
-                        return (
-                        <tr>
-                            <td>{song.title}</td>
-                            <td>{song.album}</td>
-                            <td>{song.artist}</td>
-                            <td>{song.genre}</td>
-                            <td>{song.release_date}</td>
-                            <td>{song.likes}</td>
-                            <td><Like songId={song.id} songtitle={song.title} likeSong={props.likeSong}/></td>
-                            <td><Delete songId={song.id} deleteSongs={props.deleteSongs} /></td>
-                        </tr>
-                        )
-                    }
-                    )
-                    }
+                    {musicList}
                     </tbody>
                 </table>
                 
             </div>
-        )
+        );
     }
 }
    
