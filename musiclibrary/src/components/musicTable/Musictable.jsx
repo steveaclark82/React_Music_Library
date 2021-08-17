@@ -1,5 +1,5 @@
 import React from 'react';
-import './musicTable.css';
+import './Musictable.css';
 import Delete from '../DeleteSong/deleteSong';
 import Like from '../LikeButton/likeButton';
 
