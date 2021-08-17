@@ -1,22 +1,20 @@
-import React from 'react';
-import './Navbar.css';
-import { Button, Menu} from 'semantic-ui-react'
+import React, { Component } from "react";
 
-
-function NavBar(props) { 
+class Navbar extends Component {
+  navbarStyle = {
+    margin: "auto",
+  };
+  render() {
     return (
-        <Menu inverted size='massive'>
-        <Menu.Item
-          name='music library app'
-        />
+      <div className="navbar" style={this.navbarStyle}>
+        <h3 style={{ margin: "10px" }}>
+          <span role="img"> 📻 </span>
+          WebPod
+        </h3>
 
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Button inverted color='blue' onClick="#">Add New Music</Button>
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu>
+      </div>
     );
+  }
 }
 
-export default NavBar;
+export default Navbar;

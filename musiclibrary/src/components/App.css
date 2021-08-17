@@ -1,3 +1,8 @@
-body { 
-  background-color: #6c22ce;
-  }
+.background {
+  background: url("/src/image/studio.jpg");
+  background-position: 'center';
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+  

@@ -1,37 +1,46 @@
 import React from 'react';
-import './Musictable.css';
-import { Button } from 'react';
+import Delete from '../Delete/delete';
+import './musicTable.css';
 
-
-const Musictable = (props) => {
-    return (
-        <table className="table table-dark table-hover" cellSpacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Song Title</th>
-                    <th scope="col">Artist</th>
-                    <th scope="col">Album</th>
-                    <th scope="col">Genre</th>
-                    <th scope="col">Release Date</th>
-                </tr>
-            </thead>
-            <tbody>
-            {props.songs.map(song =>  
-            <tr key={song.id}>
-                <td>{song.id}</td>
+function MusicTable(props){
+    console.log(props);
+    if(props.songs === undefined){
+        return (
+            <div></div>
+        );
+    }
+    else{
+        let musicList = props.songs.map(function(song){
+            return <tr>
                 <td>{song.title}</td>
-                <td>{song.artist}</td>
                 <td>{song.album}</td>
+                <td>{song.artist}</td>
                 <td>{song.genre}</td>
                 <td>{song.release_date}</td>
-                <td><Button color='yellow' onClick={() => {props.update(song.id)}}>Update</Button>
-                <Button negative onClick={() => {props.delete(song.id)}}>Delete</Button></td>
+                <td><Delete songid={song.id} deleteSongs={props.deleteSongs} /></td>
             </tr>
-            )}
-            </tbody>
-        </table>        
-    )
+        })
+        return (
+            <div className='table'>
+                <h1>Music Library</h1>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Album</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Release Date</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                    {musicList}
+                    </tbody>
+                </table>
+                
+            </div>
+        );
+    }
 }
-
-export default Musictable;
+   
+export default MusicTable;

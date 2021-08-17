@@ -1,53 +1,100 @@
-import React, {Component} from 'react';
-import axios from 'axios'
-//import Music from './Music/Music';
-import {Container} from 'react'
-import musicTable from './musicTable/Musictable';
-import SearchBar from './SearchBar/SearchBar';
+import React, { Component} from 'react';
+import MusicTable from './MusicTable/musicTable';
+import axios from 'axios';
+import CreateSong from './CreateSong/createSong';
+import SearchBar from './SearchBar/searchBar';
+import './app.css';
 
 class App extends Component {
-  state = {
-    songs: []
-}
+    constructor(props){
+        super(props);
+        this.state = { 
+            songs: [],
+            currentSongs: []
+        }
+    }
+    componentDidMount(){
+        this.getAllSongs();
+    }
 
-componentMount(){
-    this.allSongs();
-}
+    async getAllSongs(){
+        let response = await axios.get('http://127.0.0.1:8000/music/');
+        this.setState({
+            songs: response.data,
+            currentSongs : response.data
+        });
+    }
 
-async allSongs(){
-    let response = await axios.get("http://127.0.0.1:8000/music/");
-    this.setState({
-        songs: response.data,
-    })
-}
+    filterSongs=(songsToDisplay)=>{
+        this.setState({
+            currentSongs : songsToDisplay
+        })
+    }
 
-delete = (id) => {
-    axios.delete(`http://127.0.0.1:8000/info/${id}`)
-    .then(() => this.setState({ status: 'Delete succesful' }))
-    window.location.reload();
-}
+    deleteSong = async (id) => {
+        console.log(this.props)
+        await axios.delete(`http://127.0.0.1:8000/music/${id}/`)
+        let response = await this.getAllSongs()
+        if(response === undefined){
+            this.setState({
 
-addSong(newSong){
-    this.state.songs.push(newSong);
-    axios.post('http://127.0.0.1:8000/music/', newSong)
-    .then(response => this.setState({
-      newSong: response.data
-    }));
-    window.location.reload();
-  }
+            });
+        }
+        else{
+            this.setState({
+                songs: response.data
+            });
+        }
+    }
 
+    addSong = async (song) => {
+        await axios.post('http://127.0.0.1:8000/music/',song)
+        let response = await this.getAllSongs()
+        if(response === undefined){
+            this.setState({
 
-render() {
-    return (
-        
-        <Container textAlign='justified'>
-            <navbar />
-            <SearchBar />
-            <musicTable songs={this.state.songs} delete={this.delete} />
-            <songForm addSong={this.addSong.bind(this)}/>
-        </Container>
-    );
-}
+            });
+        }
+        else{
+            this.setState({
+                songs: response.data
+            });
+        }
+    }
+
+    likeSong = async (id, title) => {
+        console.log(this.props)
+        await axios.patch(`http://127.0.0.1:8000/music/${id}/${title}/`)
+        let response = await this.getAllSongs()
+        if(response === undefined){
+            this.setState({
+
+            });
+        }
+        else{
+            this.setState({
+                songs: response.data
+            });
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <div className='background'>
+                    <center>
+                    <br/>
+                    <SearchBar songs={this.state.songs} filterSongs={this.filterSongs}/>
+                    <br/>
+                    <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>
+                    
+                    <CreateSong addSong={this.addSong.bind(this)}/>
+                    <br/>
+                    </center>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

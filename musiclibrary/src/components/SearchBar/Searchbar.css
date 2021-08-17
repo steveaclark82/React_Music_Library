@@ -1,10 +1,7 @@
-.titlebar-nav { 
-    color: rgb(255, 247, 132);
-    text-shadow: rgb(0, 0, 0) 2px 2px;
-    width: 100%;
+.search{
+    background: rgb(85, 57, 243);
+    color: white;
+    border-radius: 5px;
+    width:13vw;
+    padding: 5px;
 }
-
-h1 {
-    padding-bottom: 0.2em;
-    padding-left: 1em;
-  }
