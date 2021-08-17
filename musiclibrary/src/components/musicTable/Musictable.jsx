@@ -8,23 +8,11 @@ function MusicTable(props){
     console.log(props);
     if(props.songs === undefined){
         return (
-            <div></div>
+            <div>hello</div>
         );
     }
     else{
-        let musicList = props.songs.map(function(song){
-            return <tr>
-                <td>{song.title}</td>
-                <td>{song.album}</td>
-                <td>{song.artist}</td>
-                <td>{song.genre}</td>
-                <td>{song.release_date}</td>
-                <td>{song.likes}</td>
-                <td><Like songId={song.id} songtitle={song.title} likeSong={props.likeSong}/></td>
-                <td><Delete songId={song.id} deleteSongs={props.deleteSongs} /></td>
-            </tr>
-        })
-        return (
+        return(
             <div className='table'>
                 <h1>Music Library</h1>
                 <table>
@@ -39,12 +27,27 @@ function MusicTable(props){
                         <th></th>
                     </tr>
                     <tbody>
-                    {musicList}
+                    {props.songs.map(function(song){
+                        return (
+                        <tr>
+                            <td>{song.title}</td>
+                            <td>{song.album}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.genre}</td>
+                            <td>{song.release_date}</td>
+                            <td>{song.likes}</td>
+                            <td><Like songId={song.id} songtitle={song.title} likeSong={props.likeSong}/></td>
+                            <td><Delete songId={song.id} deleteSongs={props.deleteSongs} /></td>
+                        </tr>
+                        )
+                    }
+                    )
+                    }
                     </tbody>
                 </table>
                 
             </div>
-        );
+        )
     }
 }
    

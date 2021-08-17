@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import musicTable from './musicTable/Musictable.css';
+import MusicTable from './musicTable/Musictable';
 import axios from 'axios';
 import SearchBar from './SearchBar/Searchbar.css';
 import CreateSong from './CreateSong/createSong.css';
@@ -36,9 +36,7 @@ class App extends Component {
         await axios.delete(`http://127.0.0.1:8000/music/${id}/`)
         let response = await this.getAllSongs()
         if(response === undefined){
-            this.setState({
-
-            });
+           
         }
         else{
             this.setState({
@@ -50,9 +48,7 @@ class App extends Component {
         await axios.post('http://127.0.0.1:8000/music/',song)
         let response = await this.getAllSongs()
         if(response === undefined){
-            this.setState({
-
-            });
+            
         }
         else{
             this.setState({
@@ -81,20 +77,20 @@ class App extends Component {
         return (
             <div>
                 
-            <musicTable 
+            <MusicTable 
                 songs={this.state.songs}
                 deleteSong={this.deleteSong} 
             />
-            <CreateSong 
+            {/* <CreateSong 
                 songs={this.state.songs} 
             />
 
             <SearchBar 
                 songs={this.state.songs}
-            />
+            /> */}
 
         </div>
     )
-}
+    }
 }
 export default App;
