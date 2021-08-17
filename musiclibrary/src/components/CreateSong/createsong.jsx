@@ -1,45 +1,43 @@
 import React, { Component } from 'react';
 import './createSong.css';
 
-
-class CreateSong extends Component{
+class CreateSong extends Component {
     constructor(props){
         super(props);
         this.state = {
             title: '',
-            artist: '',
             album: '',
+            artist: '',
+            genre: '',
             release_date: '',
-            likes: '',
         }
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         const song = {
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
             release_date: this.state.release_date,
-            like: this.state.likes,
             genre: this.state.genre
         }
-        this.props.addNewSong(song);
+        this.props.addSong(song);
         this.setState({
-            title:'',
+            title: '',
             artist: '',
-            album:'',
-            release_date:'',
-            like: '',
+            album: '',
+            release_date: '',
             genre: ''
-        })
+        });
     }
+
     render() {
         return (
             <div className='form-box'>
@@ -61,10 +59,6 @@ class CreateSong extends Component{
                     <div>
                         <label>Release Date:  </label>
                         <input type='text' name='release_date' onChange={this.handleChange} value={this.state.release_date}/>
-                    </div>
-                    <div>
-                        <label>Likes:  </label>
-                        <input type='text' name='likes' onChange={this.handleChange} value={this.state.likes}/>
                     </div>
                     <div>
                         <label>Genre:  </label>

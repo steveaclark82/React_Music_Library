@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import MusicTable from './MusicTable/musicTables';
 import axios from 'axios';
 import SearchBar from './SearchBar/searchBar';
 import CreateSong from './CreateSong/createSong';
 import './App.css';
+=======
+import React, { Component} from 'react';
+import MusicTable from './MusicTable/musicTable';
+import axios from 'axios';
+import CreateSong from './CreateSong/createSong';
+import SearchBar from './SearchBar/searchBar';
+import './app.css';
+>>>>>>> 51e96f18386e68ee6385306a3f9b58f2270be5c0
 
 class App extends Component {
     constructor(props){
@@ -36,7 +45,9 @@ class App extends Component {
         await axios.delete(`http://127.0.0.1:8000/music/${id}/`)
         let response = await this.getAllSongs()
         if(response === undefined){
-           
+            this.setState({
+
+            });
         }
         else{
             this.setState({
@@ -44,14 +55,14 @@ class App extends Component {
             });
         }
     }
-        addNewSong = async (song) => {
+
+    addSong = async (song) => {
         await axios.post('http://127.0.0.1:8000/music/',song)
         let response = await this.getAllSongs()
         if(response === undefined){
             this.setState({
 
             });
-            
         }
         else{
             this.setState({
@@ -79,14 +90,14 @@ class App extends Component {
     render() {
         return (
             <div>
-                 <div className='background'>
+                <div className='background'>
                     <center>
                     <br/>
                     <SearchBar songs={this.state.songs} filterSongs={this.filterSongs}/>
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>
                     
-                    <CreateSong addNewSong={this.addNewSong.bind(this)}/>
+                    <CreateSong addSong={this.addSong.bind(this)}/>
                     <br/>
                     </center>
                 </div>
@@ -94,4 +105,5 @@ class App extends Component {
         );
     }
 }
+
 export default App;
