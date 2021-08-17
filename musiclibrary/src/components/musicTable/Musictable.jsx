@@ -1,5 +1,6 @@
 import React from 'react';
 import './Musictable.css';
+import Delete from '../DeleteSong/deleteSong';
 
 
 function MusicTable(props){
