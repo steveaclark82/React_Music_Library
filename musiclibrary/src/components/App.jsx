@@ -83,7 +83,7 @@ class App extends Component {
                 <div className='background'>
                     <center>
                     <br/>
-                    <SearchBar songs={this.state.songs} filterSongs={this.filterSongs}/>
+                    <SearchBar handleInput= {this.handleInput} />
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>                    
                     <CreateSong createSong={this.addSong.bind(this)}/>
