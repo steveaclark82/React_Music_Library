@@ -1,7 +1,8 @@
-import React, {Components} from 'react';
+import React, { Component } from 'react';
+import './createSong.css';
 
 
-class CreateSong extends Component {
+class CreateSong extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -9,7 +10,6 @@ class CreateSong extends Component {
             artist: '',
             album: '',
             release_date: '',
-            like: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
