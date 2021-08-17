@@ -11,17 +11,15 @@ class CreateSong extends Component{
             album: '',
             release_date: '',
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    Change(event) {
         this.setState({
             [event.target.name] : event.target.value
         });
     }
 
-    handleSubmit(event) {
+    Submit(event) {
         event.preventDefault();
         const song = {
             title: this.state.title,
@@ -39,42 +37,45 @@ class CreateSong extends Component{
             like: ''
         })
     }
-    render(){
-        return(
-            <div>
-                <hr />
-                <h2>Add a Song</h2>
-                <form onSubmit= {this.handleSubmit}>
-                    <div className='row col-align'>
-                        <div className='col-md-4'>
-                            <label>Title:</label>
-                            <input type='text' name='title' value = {this.state.title} onChange={this.handleChange}/>
-                        </div>
-                        <div className= 'col-md-4'>
-                            <label>Artist:</label>
-                            <input type='text' name='artist' value = {this.state.artist} onChange={this.handleChange}/>
-                        </div>
-                        <div className= 'col-md-4'>
-                            <label>Album:</label>
-                            <input type='text' name='album' value = {this.state.album} onChange={this.handleChange}/>
-                        </div>
-                        <div className='col-md-4'>
-                            <label>Release Date:</label>
-                            <input type='date' name='release_date' value = {this.state.release_date} onChange={this.handleChange}/>
-                        </div>
-                        <div className='col-md-4'>
-                            <label>Likes:</label>
-                            <input type='text' name='like' value = {this.state.like} onChange={this.handleChange}/>
-                        </div>
-                        <div>
-                            <div>
-                                <input type='submit' value='Click here to add your song!'/>
-                            </div>
-                        </div>
+    render() {
+        return (
+            <div className='form-box'>
+                <form onSubmit={this.Submit}>
+                <h3>Add a Song</h3>
+                <br/>
+                    <div>
+                        <label>Title:  </label>
+                        <input type='text' name='title' onChange={this.Change} value={this.state.title}/>
+                    </div>
+                    <div>
+                        <label>Artist:  </label>
+                        <input type='text' name='artist' onChange={this.Change} value={this.state.artist}/>
+                    </div>
+                    <div>
+                        <label>Album:  </label>
+                        <input type='text' name='album' onChange={this.Change} value={this.state.album}/>
+                    </div>
+                    <div>
+                        <label>Release Date:  </label>
+                        <input type='text' name='release_date' onChange={this.Change} value={this.state.release_date}/>
+                    </div>
+                    <div>
+                        <label>Likes:  </label>
+                        <input type='text' name='likes' onChange={this.Change} value={this.state.likes}/>
+                    </div>
+                    <div>
+                        <label>Genre:  </label>
+                        <input type='text' name='genre' onChange={this.Change} value={this.state.genre}/>
+                        <br/>
+                    </div>
+                    <div>
+                        <br/>
+                        <input type='submit' value='Submit'/>
                     </div>
                 </form>
             </div>
-        )
+        );
     }
 }
-export default CreateSong
+
+export default CreateSong;
