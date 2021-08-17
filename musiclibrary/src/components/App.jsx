@@ -86,7 +86,7 @@ class App extends Component {
                     <SearchBar handleInput= {this.handleInput} />
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>                    
-                    <CreateSong createSong={this.addSong.bind(this)}/>
+                    <CreateSong createSong={this.createSong.bind(this)}/>
                     <br/>
                     </center>
                 </div>
