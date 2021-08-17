@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MusicTable from './musicTable/Musictable.css';
+import musicTable from './musicTable/Musictable.css';
 import axios from 'axios';
 import SearchBar from './SearchBar/Searchbar.css';
 import CreateSong from './CreateSong/createSong.css';
@@ -80,19 +80,21 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div className='background'>
-                    <center>
-                    <br/>
-                    <SearchBar songs={this.state.songs} filterSongs={this.filterSongs}/>
-                    <br/>
-                    <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>                    
-                    <CreateSong addNewSong={this.addNewSong.bind(this)}/>
-                    <br/>
-                    </center>
-                </div>
-            </div>
-        );
-    }
-}
+                
+            <musicTable 
+                songs={this.state.songs}
+                deleteSong={this.deleteSong} 
+            />
+            <CreateSong 
+                songs={this.state.songs} 
+            />
 
+            <SearchBar 
+                songs={this.state.songs}
+            />
+
+        </div>
+    )
+}
+}
 export default App;
