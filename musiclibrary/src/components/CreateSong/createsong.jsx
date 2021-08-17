@@ -10,6 +10,7 @@ class CreateSong extends Component{
             artist: '',
             album: '',
             release_date: '',
+            likes: '',
         }
     }
 
@@ -26,7 +27,8 @@ class CreateSong extends Component{
             artist: this.state.artist,
             album: this.state.album,
             release_date: this.state.release_date,
-            like: this.state.like
+            like: this.state.likes,
+            genre: this.state.genre
         }
         this.props.addNewSong(song);
         this.setState({
@@ -34,7 +36,8 @@ class CreateSong extends Component{
             artist: '',
             album:'',
             release_date:'',
-            like: ''
+            like: '',
+            genre: ''
         })
     }
     render() {
