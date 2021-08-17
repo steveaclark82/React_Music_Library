@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './createSong.css';
-import React, {Component} from 'react';
 
 
 class CreateSong extends Component{
