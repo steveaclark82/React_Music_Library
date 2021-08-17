@@ -1,4 +1,4 @@
-import React, { Components } from 'react';
+import React from "react";
 
 
 function Delete (props) {
