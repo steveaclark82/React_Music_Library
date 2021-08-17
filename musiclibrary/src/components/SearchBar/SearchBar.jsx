@@ -1,36 +1,18 @@
 import React, { Component } from 'react';
 import './SearchBar.css';
 
-class SearchBar extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            title: '',
-            album: '',
-            artist: '',
-            genre: '',
-            release_date: '',
-        }
-    }
-
-    handleChange = (event) => {
-        this.setState({
-            filter: event.target.value
-        }, function(){
-            let songs = this.props.songs.filter(song => song.title.includes(this.state.filter) || song.genre.includes(this.state.filter) || 
-            song.album.includes(this.state.filter)  || song.artist.includes(this.state.filter) || song.release_date.includes(this.state.filter))
-            this.props.filterSongs(songs)
-        });
-    }
-
-    render() {
-            return(
-                <div className='search'>
-                    <label>Search:  </label>
-                    <input type='text' value={this.state.filter} onChange={this.handleChange}/>
-                </div>
-            );
-    }
+const SearchBar = (props) =>{
+    return(
+        <div>
+            <hr />
+            <h2>Search</h2>
+                    <div className='col-md-4'>
+                        <label>Search:</label>
+                        <input onChange={props.handleInput} type ="text" />
+                    </div>
+        </div>
+    )
 }
+
 
 export default SearchBar;
