@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import Musictable from './musicTable/MusicTable'
+import Musictable from './musicTable/Musictable';
 import axios from 'axios';
 import SearchBar from './SearchBar/SearchBar.css';
 import CreateSong from './CreateSong/createSong';
