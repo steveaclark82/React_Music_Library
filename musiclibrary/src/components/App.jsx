@@ -46,8 +46,7 @@ class App extends Component {
             });
         }
     }
-
-    addSong = async (song) => {
+        createSong = async (song) => {
         await axios.post('http://127.0.0.1:8000/music/',song)
         let response = await this.getAllSongs()
         if(response === undefined){
@@ -87,7 +86,7 @@ class App extends Component {
                     <SearchBar songs={this.state.songs} filterSongs={this.filterSongs}/>
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>                    
-                    <AddSong addSong={this.addSong.bind(this)}/>
+                    <CreateSong createSong={this.addSong.bind(this)}/>
                     <br/>
                     </center>
                 </div>
