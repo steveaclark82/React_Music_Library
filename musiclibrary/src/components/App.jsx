@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import MusicTable from './musicTable/Musictables';
+import MusicTable from './MusicTable/musicTables';
 import axios from 'axios';
-import SearchBar from './SearchBar/searchBar.css';
-import CreateSong from './CreateSong/createSong.css';
+import SearchBar from './SearchBar/searchBar';
+import CreateSong from './CreateSong/createSong';
 import './App.css';
 
 class App extends Component {
