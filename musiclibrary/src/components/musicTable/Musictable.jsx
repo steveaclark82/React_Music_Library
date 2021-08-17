@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './musicTable.css';
+import './Musictable.css';
 
 function MusicTable(props){
     console.log(props);
