@@ -17,7 +17,7 @@ function MusicTable(props){
                 <td>{song.artist}</td>
                 <td>{song.genre}</td>
                 <td>{song.release_date}</td>
-                <td><Delete songid={song.id} deleteSongs={props.deleteSongs} /></td>
+                <td><Delete songId={song.id} deleteSongs={props.deleteSongs} /></td>
             </tr>
         })
         return (
