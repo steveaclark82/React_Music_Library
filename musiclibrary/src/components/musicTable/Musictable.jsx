@@ -1,7 +1,7 @@
 import React from 'react';
 import './musicTable.css';
-import Delete from '../DeleteSong/deleteSong';
-import Like from '../LikeButton/likeButton';
+import Delete from '../DeleteSong/Delete';
+import Like from '../LikeButton/Like';
 
 
 function MusicTable(props){
