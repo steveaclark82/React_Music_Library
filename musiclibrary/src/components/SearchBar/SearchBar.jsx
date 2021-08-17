@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SearchBar.css';
+import './searchBar.css';
 
 class SearchBar extends Component {
     constructor(props){
@@ -10,7 +10,6 @@ class SearchBar extends Component {
             artist: '',
             genre: '',
             release_date: '',
-            likes: '',
         }
     }
 
@@ -27,12 +26,11 @@ class SearchBar extends Component {
     render() {
             return(
                 <div className='search'>
-                    <label>Search:  </label>
+                    <label>Search a Song:  </label>
                     <input type='text' value={this.state.filter} onChange={this.handleChange}/>
                 </div>
             );
     }
 }
-
 
 export default SearchBar;

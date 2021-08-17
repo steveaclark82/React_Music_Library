@@ -1,5 +1,5 @@
 table{
-    background: rgb(129, 116, 204);
+    background: rgb(0, 0, 0);
     height: auto;
     width:50vw;
     border-radius: 5px; 
@@ -12,9 +12,9 @@ table{
 
 h1{
     color: white;
-    background: rgb(129, 116, 204);
+    background: rgb(0, 0, 0);
     height: 6vh;
-    width:15vw;
+    width:50vw;
     margin: 0;
     border-radius: 5px;
 }
