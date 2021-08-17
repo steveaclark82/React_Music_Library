@@ -25,7 +25,7 @@ function MusicTable(props){
                 <h1>Music Library</h1>
                 <table>
                     <tr>
-                        <th>Song Title</th>
+                        <th>Title</th>
                         <th>Album</th>
                         <th>Artist</th>
                         <th>Genre</th>
