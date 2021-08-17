@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import './createSong.css';
+=======
+import React, {Component} from 'react';
+>>>>>>> a02f17c49f7d22f35a738cfaf0796565dec60344
 
 
 class CreateSong extends Component{
