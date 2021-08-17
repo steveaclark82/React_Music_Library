@@ -13,13 +13,13 @@ class CreateSong extends Component{
         }
     }
 
-    Change(event) {
+    handleChange(event) {
         this.setState({
             [event.target.name] : event.target.value
         });
     }
 
-    Submit(event) {
+    handleSubmit(event) {
         event.preventDefault();
         const song = {
             title: this.state.title,
@@ -40,32 +40,32 @@ class CreateSong extends Component{
     render() {
         return (
             <div className='form-box'>
-                <form onSubmit={this.Submit}>
+                <form onSubmit={this.handleSubmit}>
                 <h3>Add a Song</h3>
                 <br/>
                     <div>
                         <label>Title:  </label>
-                        <input type='text' name='title' onChange={this.Change} value={this.state.title}/>
+                        <input type='text' name='title' onChange={this.handleChange} value={this.state.title}/>
                     </div>
                     <div>
                         <label>Artist:  </label>
-                        <input type='text' name='artist' onChange={this.Change} value={this.state.artist}/>
+                        <input type='text' name='artist' onChange={this.handleChange} value={this.state.artist}/>
                     </div>
                     <div>
                         <label>Album:  </label>
-                        <input type='text' name='album' onChange={this.Change} value={this.state.album}/>
+                        <input type='text' name='album' onChange={this.handleChange} value={this.state.album}/>
                     </div>
                     <div>
                         <label>Release Date:  </label>
-                        <input type='text' name='release_date' onChange={this.Change} value={this.state.release_date}/>
+                        <input type='text' name='release_date' onChange={this.handleChange} value={this.state.release_date}/>
                     </div>
                     <div>
                         <label>Likes:  </label>
-                        <input type='text' name='likes' onChange={this.Change} value={this.state.likes}/>
+                        <input type='text' name='likes' onChange={this.handleChange} value={this.state.likes}/>
                     </div>
                     <div>
                         <label>Genre:  </label>
-                        <input type='text' name='genre' onChange={this.Change} value={this.state.genre}/>
+                        <input type='text' name='genre' onChange={this.handleChange} value={this.state.genre}/>
                         <br/>
                     </div>
                     <div>
