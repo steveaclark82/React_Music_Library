@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-import React, {Component} from 'react';
-import MusicTable from './MusicTable/musicTables';
-import axios from 'axios';
-import SearchBar from './SearchBar/searchBar';
-import CreateSong from './CreateSong/createSong';
-import './App.css';
-=======
 import React, { Component} from 'react';
 import MusicTable from './MusicTable/musicTable';
 import axios from 'axios';
 import CreateSong from './CreateSong/createSong';
 import SearchBar from './SearchBar/searchBar';
 import './app.css';
->>>>>>> 51e96f18386e68ee6385306a3f9b58f2270be5c0
 
 class App extends Component {
     constructor(props){
