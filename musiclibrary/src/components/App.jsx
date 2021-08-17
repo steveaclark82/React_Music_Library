@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import MusicTable from './musicTable/Musictable';
+import MusicTable from './MusicTable/musicTable';
 import axios from 'axios';
-import SearchBar from './SearchBar/Searchbar.css';
+import SearchBar from './SearchBar/searchBar.css';
 import CreateSong from './CreateSong/createSong.css';
 import './App.css';
 
@@ -44,10 +44,13 @@ class App extends Component {
             });
         }
     }
-        createSong = async (song) => {
+        addNewSong = async (song) => {
         await axios.post('http://127.0.0.1:8000/music/',song)
         let response = await this.getAllSongs()
         if(response === undefined){
+            this.setState({
+
+            });
             
         }
         else{
