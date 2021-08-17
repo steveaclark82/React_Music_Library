@@ -28,7 +28,7 @@ class SearchBar extends Component {
             return(
                 <div className='search'>
                     <label>Search:  </label>
-                    <input type='text' value={this.state.filter} onChange={this.handleChange}/>
+                    <input type='text' value={this.state.filter} onChange={this.Change}/>
                 </div>
             );
     }
