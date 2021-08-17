@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MusicTable from './MusicTable/musicTable';
+import MusicTable from './musicTable/Musictable';
 import axios from 'axios';
 import SearchBar from './SearchBar/Searchbar.css';
 import CreateSong from './CreateSong/createSong.css';
@@ -83,7 +83,7 @@ class App extends Component {
                     <br/>
                     <MusicTable songs={this.state.currentSongs} deleteSongs={this.deleteSong} likeSong={this.likeSong}/>
                     
-                    <CreateSong addNewSong={this.addNewSong.bind(this)}/>
+                    <div CreateSong addNewSong={this.addNewSong.bind(this)}/>
                     <br/>
                     </center>
                 </div>
